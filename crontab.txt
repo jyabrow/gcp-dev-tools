@@ -1,0 +1,38 @@
+# This crontab starts and stops bvc live-node service VMs on a schedule, to provide
+# dedicated VMs to each customer (temporarily, until dynamic provisioning is implemented)
+#
+# To deploy: Follow instructions to gain access to the company's staging cron server:
+# https://docs.google.com/document/d/11SlEDktI3_WbrOriHWd8oc-rBvM6sdZ_N07VXuDoevo/
+#
+# 1. gcloud compute ssh --zone "us-central1-a" "cron"  --project "bvc-portal-staging"
+# 2. sudo su - bvc
+# 3. cd gcp-dev-tools
+# 4. git pull
+# 5. crontab crontab.txt
+#
+# Client-specific VM "shifts" defined in cron entries below for client local time, (converted to UTC for this cron)
+
+# m h dom mon dow   command
+
+# Shift: EST 8am-6pm => UTC 1pm-11pm  (Daiwa, Silverstein, Parkway)
+0 13 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh create --env production -f --zone us-east4-a ln-daiwa-01 --labels 'client=daiwa'
+1 13 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh create --env production -f --zone us-east4-b ln-silverstein-01 --labels 'client=silverstein'
+2 13 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh create --env production -f --zone us-east1-c ln-parkway-01 --labels 'client=parkway'
+0 22 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh delete --env production -f --zone us-east4-a ln-daiwa-01
+1 22 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh delete --env production -f --zone us-east4-b ln-silverstein-01
+2 22 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh delete --env production -f --zone us-east1-c ln-parkway-01
+
+# Shift: PST 8am-6pm => UTC 4pm-2am(next day)  (Healthpeak)
+0 16 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh create --env production -f  --zone us-west2-b ln-healthpeak-01 --labels 'client=healthpeak'
+0  2 * * 2-6 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh delete --env production -f  --zone us-west2-b ln-healthpeak-01
+
+# Shift: JST 10am-8pm => UTC 1am-11am  (WeWork)
+0  1 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh create --env production -f  --zone asia-northeast1-a ln-wework-01 --labels 'client=wework'
+1  1 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh create --env production -f  --zone asia-northeast1-a ln-wework-02 --labels 'client=wework'
+0 11 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh delete --env production -f  --zone asia-northeast1-a ln-wework-01
+1 11 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh delete --env production -f  --zone asia-northeast1-a ln-wework-02
+
+# Shift: PST 6am-3pm => UTC 2pm-10pm  (bvc buildtest, start/stop)
+0 14 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh start --env staging -f  ln-buildtest-01 --zone us-east4-b
+0 22 * * 1-5 sudo /opt/bvc/gcp-dev-tools/bvinstances.sh stop --env staging -f  ln-buildtest-01 --zone us-east4-b
+

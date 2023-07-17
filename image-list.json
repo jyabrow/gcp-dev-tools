@@ -1,0 +1,1103 @@
+[
+  {
+    "creationTimestamp": "2023-03-10T15:57:30.492-08:00",
+    "description": "",
+    "id": "4212521613723598085",
+    "kind": "compute#instanceTemplate",
+    "name": "buildserver-8-cpu-t4-gpu",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "buildserver-8-cpu-t4-gpu",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/buildserver"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "MIGRATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/buildserver-8-cpu-t4-gpu"
+  },
+  {
+    "creationTimestamp": "2023-03-16T08:57:54.327-07:00",
+    "description": "",
+    "id": "8171640643479569005",
+    "kind": "compute#instanceTemplate",
+    "name": "buildserver-8-cpu-t4-gpu-1",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "buildserver-8-cpu-t4-gpu",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "200",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/buildserver"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/buildserver-8-cpu-t4-gpu-1"
+  },
+  {
+    "creationTimestamp": "2022-08-19T11:37:57.591-07:00",
+    "description": "",
+    "id": "1815488460204697194",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-16-cpu-t4-gpu-1",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-8-cpu-t4-gpu",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-16",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-16-cpu-t4-gpu-1"
+  },
+  {
+    "creationTimestamp": "2022-10-21T09:56:58.925-07:00",
+    "description": "",
+    "id": "8028442057313841589",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-32-cpu-t4-gpu",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-32-cpu-t4-gpu",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-32",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-32-cpu-t4-gpu"
+  },
+  {
+    "creationTimestamp": "2022-08-19T11:37:19.990-07:00",
+    "description": "",
+    "id": "5430280846602036912",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-4-cpu-t4-gpu",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-8-cpu-t4-gpu",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-4",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-4-cpu-t4-gpu"
+  },
+  {
+    "creationTimestamp": "2022-10-21T11:43:46.982-07:00",
+    "description": "",
+    "id": "1525716985390782093",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-64-cpus-2-gpus",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-64-cpus-2-gpus",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 4,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-64",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-64-cpus-2-gpus"
+  },
+  {
+    "creationTimestamp": "2022-08-19T09:29:38.706-07:00",
+    "description": "",
+    "id": "7751712881998169245",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-8-cpu-t4-gpu",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-8-cpu-t4-gpu",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-8-cpu-t4-gpu"
+  },
+  {
+    "creationTimestamp": "2022-09-21T14:56:04.167-07:00",
+    "description": "",
+    "id": "1816292138800264859",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-8-cpu-t4-gpu-prev-image",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-8-cpu-t4-gpu-prev-image",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-06062e7-5343-5477-5540-5548-5614-5620"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-8-cpu-t4-gpu-prev-image"
+  },
+  {
+    "creationTimestamp": "2022-10-28T08:37:13.531-07:00",
+    "description": "",
+    "id": "8711254987368712646",
+    "kind": "compute#instanceTemplate",
+    "name": "livenode-8-cpus-1-gpu-ssd",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "livenode-8-cpus-1-gpu-ssd",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "100",
+            "diskType": "pd-ssd",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/livenode-8-cpus-1-gpu-ssd"
+  },
+  {
+    "creationTimestamp": "2022-09-06T09:41:02.993-07:00",
+    "description": "",
+    "id": "7616451296580257521",
+    "kind": "compute#instanceTemplate",
+    "name": "test-big-drive-source",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "test-big-drive-source",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "1000",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/livenode-latest"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/test-big-drive-source"
+  },
+  {
+    "creationTimestamp": "2022-09-06T13:37:30.621-07:00",
+    "description": "",
+    "id": "5699789627837780325",
+    "kind": "compute#instanceTemplate",
+    "name": "test-big-drive-template",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "test-big-drive-template",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "1000",
+            "diskType": "pd-balanced",
+            "sourceImage": "projects/bvc-portal-staging/global/images/test-big-drive-image"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/test-big-drive-template"
+  },
+  {
+    "creationTimestamp": "2022-09-06T15:38:22.969-07:00",
+    "description": "",
+    "id": "2798967857125946673",
+    "kind": "compute#instanceTemplate",
+    "name": "test-big-drive-template-ssd",
+    "properties": {
+      "canIpForward": false,
+      "confidentialInstanceConfig": {
+        "enableConfidentialCompute": false
+      },
+      "description": "",
+      "disks": [
+        {
+          "autoDelete": true,
+          "boot": true,
+          "deviceName": "test-big-drive-template-ssd",
+          "index": 0,
+          "initializeParams": {
+            "diskSizeGb": "1000",
+            "diskType": "pd-ssd",
+            "sourceImage": "projects/bvc-portal-staging/global/images/test-big-drive-image"
+          },
+          "kind": "compute#attachedDisk",
+          "mode": "READ_WRITE",
+          "type": "PERSISTENT"
+        }
+      ],
+      "guestAccelerators": [
+        {
+          "acceleratorCount": 1,
+          "acceleratorType": "nvidia-tesla-t4"
+        }
+      ],
+      "keyRevocationActionType": "NONE",
+      "machineType": "n1-standard-8",
+      "metadata": {
+        "fingerprint": "iYcGDSd2IjQ=",
+        "kind": "compute#metadata"
+      },
+      "networkInterfaces": [
+        {
+          "accessConfigs": [
+            {
+              "kind": "compute#accessConfig",
+              "name": "External NAT",
+              "networkTier": "PREMIUM",
+              "type": "ONE_TO_ONE_NAT"
+            }
+          ],
+          "kind": "compute#networkInterface",
+          "name": "nic0",
+          "network": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/networks/default",
+          "stackType": "IPV4_ONLY"
+        }
+      ],
+      "reservationAffinity": {
+        "consumeReservationType": "ANY_RESERVATION"
+      },
+      "scheduling": {
+        "automaticRestart": true,
+        "onHostMaintenance": "TERMINATE",
+        "preemptible": false,
+        "provisioningModel": "STANDARD"
+      },
+      "serviceAccounts": [
+        {
+          "email": "189043980068-compute@developer.gserviceaccount.com",
+          "scopes": [
+            "https://www.googleapis.com/auth/devstorage.read_only",
+            "https://www.googleapis.com/auth/logging.write",
+            "https://www.googleapis.com/auth/monitoring.write",
+            "https://www.googleapis.com/auth/servicecontrol",
+            "https://www.googleapis.com/auth/service.management.readonly",
+            "https://www.googleapis.com/auth/trace.append"
+          ]
+        }
+      ],
+      "shieldedInstanceConfig": {
+        "enableIntegrityMonitoring": true,
+        "enableSecureBoot": false,
+        "enableVtpm": true
+      },
+      "tags": {
+        "items": [
+          "http-server",
+          "https-server"
+        ]
+      }
+    },
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/bvc-portal-staging/global/instanceTemplates/test-big-drive-template-ssd"
+  }
+]
