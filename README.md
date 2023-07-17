@@ -15,7 +15,8 @@ property models, and performing subjective tests on staging VM instances before
 wrapping it all up for production.
 
 The procedures documented below require a number of complicated invocations of
-gcloud, gsutil, ssh, and Windows command-line utilities,
+gcloud, gsutil, ssh, and Windows command-line utilities. The scripts do most
+of the heavy-lifting
 
 
 ## Target System Structure
@@ -63,9 +64,12 @@ The live-node service handles communication and startup/shutdown of local live-a
 
 The live-app program is a Unity player build, that loads and streams 3D property models to WebRTC clients during a bvc Live 3D walkthrough session.  The live-app compressed archives are located in a Google storage bucket: gs://live-app-repo-us/.  To update, open a shell onto the staging VM, download and uncompress a live-app archive, and repoint the live-app link to the new live-app folder.
 
-1. `bvmodels.sh list`
-1. (copy a model name, e.g. gs://live-walkthrough-repo-us/live-app/gs://JF0FT0AdOJWvmTfvubYW-healthpeak_100acorndrive_cambridge-cs80-20230223-100649.7z)
-1. `bvmodels.sh deploy --vm ln-buildtest-01 <model-name>`
+1. `gcloud compute ssh bview_admin@ln-buildtest-01`
+(this opens a new shell window, into it, type the following:
+1. `gsutil cp gs://live-walkthrough-repo-us/live-app/live-app-XXXXXX.7z .`
+1. `7z x live-app-XXXXXX`
+1. `rm live-app`
+1. `mklink /d live-app live-app-XXXXXX`
 
 ## Add property model(s) to VM. Basic Workflow
 
